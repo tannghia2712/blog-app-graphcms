@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { PostCard, Categories, PostWidget, Header } from "../components";
 import { getPosts } from "../services";
-import { FeaturedPosts } from "../sections"
+import { FeaturedPosts } from "../sections";
 
 export default function Home({ posts }) {
   return (
@@ -33,5 +33,6 @@ export async function getStaticProps() {
 
   return {
     props: { posts },
+    revalidate: 10,
   };
 }
